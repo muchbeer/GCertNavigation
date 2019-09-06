@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/welcomeFragment">
+
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="muchbeer.raum.com.gcertnavigation.WelcomeFragment"
+        android:label="fragment_welcome"
+        tools:layout="@layout/fragment_welcome" >
+        <action
+            android:id="@+id/action_welcomeFragment_to_registrationFragment"
+            app:destination="@id/registrationFragment"
+            app:popUpTo="@+id/welcomeFragment"
+            app:popUpToInclusive="true"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            >
+
+        </action>
+        <action
+            android:id="@+id/action_welcomeFragment_to_clientPage"
+            app:destination="@id/clientPage"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            />
+        <action
+            android:id="@+id/action_welcomeFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registrationFragment"
+        android:name="muchbeer.raum.com.gcertnavigation.RegistrationFragment"
+        android:label="fragment_registration"
+        tools:layout="@layout/fragment_registration" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="muchbeer.raum.com.gcertnavigation.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/clientPage"
+        android:name="muchbeer.raum.com.gcertnavigation.ClientPage"
+        android:label="fragment_client_page"
+        tools:layout="@layout/fragment_client_page" >
+
+
+        <argument
+        android:name="userName"
+        android:defaultValue="None" />
+        <!-- app:argType="muchbeer.raum.com.gcertnavigation.ReceiveNumb"-->
+        <argument
+            android:name="streetNumber"
+            android:defaultValue="None" />
+    </fragment>
+</navigation>
